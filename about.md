@@ -1,6 +1,6 @@
 # AI-Powered Multimodal Doubt-Clearing Tutor
 
-An offline, multimodal tutor agent that answers student doubts from uploaded course material — explaining concepts through multiple teaching styles, generating code-driven simulations instead of static images, and narrating everything through synced audio, packaged as a short explainer video.
+An multimodal tutor agent that answers student doubts from uploaded course material — explaining concepts through multiple teaching styles, generating code-driven simulations instead of static images, and narrating everything through synced audio, packaged as a short explainer video.
 
 ## Overview
 
@@ -22,7 +22,6 @@ Runs fully locally — no proprietary APIs, no cloud dependency.
 - **Simulation generation** — algorithms and processes rendered as animated, code-driven visuals instead of static diagrams
 - **Narrated explainer output** — simulation and narration combined into a single video-like artifact
 - **Follow-up doubt handling** — a routing step decides whether a follow-up needs a brand-new simulation or just new narration over the existing one
-- **Fully offline** — designed to run on local hardware with no external API dependency
 
 ## Architecture
 
@@ -39,52 +38,11 @@ The system is built as a graph-based pipeline rather than a fixed sequence, so i
 7. On a follow-up doubt, a second routing step decides whether to reuse the existing simulation with fresh narration, or regenerate both simulation and narration from scratch
 8. The updated output loops back to step 7 for any further doubts
 
-See `docs/architecture.svg` for the full diagram.
+## Architecture
 
-## Project structure
+![Architecture diagram](flowChart.png)
 
-```
-.
-├── backend/          # API server, retrieval pipeline, generation pipeline
-├── frontend/          # Desktop client
-├── simulations/       # Templated simulation renderers (per topic type)
-├── docs/              # Architecture diagrams, sample sessions, reports
-└── README.md
-```
-
-## Getting started
-
-```bash
-# clone the repo
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
-
-# backend setup
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --reload
-
-# frontend setup
-cd ../frontend
-flutter pub get
-flutter run -d windows
-```
-
-Upload your course material, ask a question through text or voice, and the tutor will generate a grounded explanation with a synced simulation and narration.
-
-## Deliverables
-
-- Working prototype
-- Source code
-- Architecture documentation
-- Sample learning sessions
-- Generated simulation samples
-- Audio demonstrations
-- Resource utilization report
-- Performance evaluation report
-- Demonstration video
-
-## Roadmap / bonus features
+## Features
 
 - Multilingual support
 - Personalized teaching style per student
@@ -94,10 +52,5 @@ Upload your course material, ask a question through text or voice, and the tutor
 - Follow-up question auto-generation
 - Concept dependency visualization
 
-## License
-
-Specify your license here (e.g. MIT).
-
 ## Contributing
-
 Issues and pull requests are welcome. Please open an issue first to discuss significant changes.
