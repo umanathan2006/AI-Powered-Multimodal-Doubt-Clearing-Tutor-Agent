@@ -1,2 +1,11 @@
 fastapi
 uvicorn
+python-multipart
+pypdf
+pymupdf
+langchain-text-splitters
+langchain-community
+langchain-huggingface
+faiss-cpu
+sentence-transformers
+requests

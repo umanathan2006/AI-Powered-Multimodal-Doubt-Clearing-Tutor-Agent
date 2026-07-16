@@ -1,8 +1,15 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import router
 
-app = FastAPI(title="OS Tutor Backend")
+app = FastAPI(title="Tutor Agent Backend")
 
-# All actual endpoints live in api/routes.py, not here.
-# main.py's only job is to create the app and plug routers into it.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app.include_router(router)
